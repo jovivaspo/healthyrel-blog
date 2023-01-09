@@ -9,7 +9,7 @@
  */
 require("dotenv").config({
   path: `.env`,
-});
+})
 
 const strapiConfig = {
   apiURL: process.env.STRAPI_API_URL,
@@ -34,12 +34,12 @@ const strapiConfig = {
     { singularName: "category" },
     { singularName: "author" },
   ],
-};
+}
 
 module.exports = {
-  pathPrefix: "/blog-healthyrel",
+  pathPrefix: "/healthyrel-blog",
   siteMetadata: {
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://github.com/jovivaspo/healthyrel-blog`,
     title: `HealthyRel`,
     description: `Explore HealthyRel for tips, advice, and experiences on mental health, social relationships, and love. Learn to improve your emotional well-being and build strong and healthy relationships on our website.`,
   },
@@ -117,4 +117,4 @@ module.exports = {
       },
     },
   ],
-};
+}
