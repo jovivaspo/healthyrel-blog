@@ -1,0 +1,78 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+/* Light Mode */
+:root {
+  --color-background: white;
+  --color-text: #222;
+  --color-primary: #164bc5;
+  --color-shadow: #222;
+  /* ... more colors */
+}
+
+/* Dark Mode */
+:root.dark {
+  --color-background: #0e141b;
+  --color-text: #ddd;
+  --color-primary: #164bc5;
+  /* ... more colors */
+}
+
+body {
+  font-family: "Montserrat";
+  font-weight: 400;
+  background-color: var(--color-background);
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--color-text);
+  border-radius: 20px;
+  height: 10px;
+}
+
+p {
+  font-size: 18px;
+  color: var(--color-text);
+}
+
+span {
+  color: var(--color-text);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Montserrat";
+  color: var(--color-text);
+  margin-top: 1.8rem;
+  margin-bottom: 1.2rem;
+}
+
+h1 {
+  font-family: "Bebas Neue";
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+}
+
+a {
+  color: var(--color-primary);
+}
+
+@media screen and (max-width: 768px) {
+  p {
+    font-size: 16px;
+  }
+}
