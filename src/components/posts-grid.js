@@ -3,7 +3,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
 
 const PostGrid = ({ articles }) => {
-  console.log(articles);
+  
   return (
     <section className="grid-post">
       {articles.map((el, index) => {

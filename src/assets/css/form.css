@@ -10,6 +10,7 @@
   padding: 2rem;
   border-radius: 20px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  margin-bottom: 230px;
 }
 
 .form-container h1 {
@@ -82,7 +83,7 @@ form button {
 
 @media screen and (max-width: 530px) {
   .form-container {
-    width: 90%;
+    width: 75%;
   }
 
   .form-container form {

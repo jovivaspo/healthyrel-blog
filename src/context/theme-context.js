@@ -12,7 +12,6 @@ const ThemeProvider = ({ children }) => {
 
   useEffect(() => {
     const initialColor = root.classList
-    console.log(initialColor)
     initialColor.value === "dark" ? setTheme("dark") : setTheme("light")
   }, [])
 

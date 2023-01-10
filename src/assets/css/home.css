@@ -113,6 +113,8 @@
   grid-auto-flow: dense;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   margin-bottom: 300px;
+  padding: 1rem;
+  justify-items: center;
 }
 
 .card-post {
@@ -151,6 +153,13 @@
 }
 
 @media screen and (max-width: 1000px) {
+  .grid-post{
+    width: 90%;
+    justify-content: center;
+  }
+  .card-post{
+    width: 80%;
+  }
   .card .card-text h2 {
     font-size: 1.4rem;
     margin: 0;
@@ -165,6 +174,10 @@
 @media screen and (max-width: 520px) {
   .home-subtitle {
     font-size: 1.3rem;
+  }
+
+  .grid-post{
+    width: 85%;
   }
 
   .section-cards {

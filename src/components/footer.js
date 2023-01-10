@@ -25,7 +25,7 @@ const Footer = () => {
           </ul>
           <ul>
             <li>
-              <a href="#">Contact</a>
+              <a href="/contact">Contact</a>
             </li>
           </ul>
         </div>
@@ -34,7 +34,7 @@ const Footer = () => {
       <div className="footer-second-menu">
         <ul>
           <li>
-            <Link to="/policy-privacy">Privacy Policy</Link>
+            <Link to="/privacy-policy">Privacy Policy</Link>
           </li>
           <li>
             <Link to="/legal-notice">Legal Notice</Link>

@@ -106,7 +106,7 @@ const TableContent = ({ blocks }) => {
     setClickInLink({ click: true, element });
   };
 
-  console.log(headings);
+
 
   return (
     <aside className="sidebar">

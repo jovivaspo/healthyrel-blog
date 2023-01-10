@@ -15,7 +15,7 @@ const Form = () => {
     if (!form.email || !form.message) {
       return alert("You must complete all fields");
     }
-    console.log(!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(form.email));
+    //console.log(!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(form.email));
     if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(form.email)) {
       return alert("Invalid email address");
     }
@@ -36,7 +36,7 @@ const Form = () => {
       .catch((error) => alert("Sorry, something went wrong"))
       .finally(setForm(initForm));
   };
-  console.log(form);
+  //console.log(form);
   return (
     <div className="form-container">
       <h1>Get in Touch</h1>

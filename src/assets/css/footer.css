@@ -53,6 +53,18 @@
     align-items: center;
     gap: 1rem;
   }
+  .footer  ul{
+    padding: 0;
+  }
+  .footer-first-menu{
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer-first-menu ul li a{
+    padding: 0;
+  }
   .footer .logo {
     width: 100px;
   }

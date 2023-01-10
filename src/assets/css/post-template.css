@@ -8,15 +8,20 @@
   margin-bottom: 200px;
 }
 
-.full-content section {
+.full-content .post-content {
   width: 78%;
   padding-left: 3rem;
 }
 
 @media screen and (max-width: 1000px) {
+ 
   .full-content {
     margin-top: 1rem;
   }
+  .full-content .post-content {
+   padding: 0;
+  }
+
   .full-content section {
     width: 100%;
     padding: 1rem;
@@ -24,8 +29,3 @@
   }
 }
 
-@media screen and (max-width: 1000px) {
-  .full-content section {
-    padding: 2rem;
-  }
-}
