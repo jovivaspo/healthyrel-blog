@@ -8,8 +8,7 @@ import BlockRender from "../components/block-render";
 import TableContent from "../components/table-content";
 import LastPosts from "../components/last-posts";
 import Seo from "../components/seo";
-/*CSS*/
-import "../assets/css/post-template.css";
+
 
 const postTemplate = ({ data }) => {
   const {

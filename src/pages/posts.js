@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '../components/layout';
 import ItemPost from '../components/item-post';
 import { graphql, useStaticQuery } from "gatsby";
+import SlidePost from '../components/slide-posts';
 
 const Posts = () => {
     const results = useStaticQuery(query);
@@ -16,18 +17,7 @@ const Posts = () => {
                         On this page you will find the latest posts from the different categories of Healthyrel: Dating, Physical Intimicy, Breakups, Friendship, Compatibility, Gender and Sexuality, Relationship Advice, Love, Relationship Problems and Single Life.
                     </p>
                     {posts.map(category => (
-                        <>
-                            <h2>{category.name}</h2>
-                            <div className='container-post'>
-                                {category.articles.length > 0?
-                                category.articles.map((article, index) => (
-                                   <ItemPost post={article} key={index} />
-                                )) :
-                                <p>There are no posts for this category</p>
-                            
-                            }
-                            </div>
-                        </>
+                        <SlidePost data={category}/>
                     ))}
 
                 </section>
@@ -50,7 +40,7 @@ const query = graphql`
               alternativeText
               localFile {
                 childImageSharp {
-                  gatsbyImageData(layout: CONSTRAINED, width: 360, height: 220)
+                  gatsbyImageData(layout: FIXED, width: 300, height: 200)
                 }
               }
             }
