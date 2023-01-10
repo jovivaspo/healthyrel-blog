@@ -101,7 +101,7 @@ li {
 }
 
 .submenu .init path {
-  fill: var(--color-background);
+  fill: white;
   stroke: none;
 }
 
