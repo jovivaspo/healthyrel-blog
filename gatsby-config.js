@@ -44,6 +44,7 @@ module.exports = {
     description: `Explore HealthyRel for tips, advice, and experiences on mental health, social relationships, and love. Learn to improve your emotional well-being and build strong and healthy relationships on our website.`,
   },
   plugins: [
+    `gatsby-plugin-fix-fouc`,
     `gatsby-plugin-gatsby-cloud`,
     `gatsby-plugin-react-helmet`,
     {

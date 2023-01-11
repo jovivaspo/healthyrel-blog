@@ -1,6 +1,5 @@
 import React from 'react';
 import Layout from '../components/layout';
-import ItemPost from '../components/item-post';
 import { graphql, useStaticQuery } from "gatsby";
 import SlidePost from '../components/slide-posts';
 
