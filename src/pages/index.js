@@ -1,21 +1,21 @@
 /*MODULES*/
-import React from "react";
-import { graphql, useStaticQuery } from "gatsby";
+import React from "react"
+import { graphql, useStaticQuery } from "gatsby"
 
 /*COMPONENTS*/
-import Layout from "../components/layout";
-import Seo from "../components/seo";
-import HeaderHome from "../components/header-home";
-import Card from "../components/card";
+import Layout from "../components/layout"
+import Seo from "../components/seo"
+import HeaderHome from "../components/header-home"
+import Card from "../components/card"
 
 /*ESTILOS*/
-import "../assets/css/home.css";
+import "../assets/css/home.css"
 
 /*IMAGES*/
-import Image1 from "../assets/images/mental-health.webp";
-import Image2 from "../assets/images/friends-happiness.webp";
-import Image3 from "../assets/images/love-romance.webp";
-import PostGrid from "../components/posts-grid";
+import Image1 from "../assets/images/mental-health.webp"
+import Image2 from "../assets/images/friends-happiness.webp"
+import Image3 from "../assets/images/love-romance.webp"
+import PostGrid from "../components/posts-grid"
 
 const cardContent = [
   {
@@ -46,8 +46,16 @@ const cardContent = [
       alt: "Experiences and stories about love",
     },
   },
-];
+]
 
+const Head = () => (
+  <>
+    <meta
+      name="google-site-verification"
+      content="z_dA9qmqPOWj0YULy1jFOA0pV2icqoybYn7DbbE1NbM"
+    />
+  </>
+)
 export default function Home() {
   const data = useStaticQuery(graphql`
     query homeMetadata {
@@ -79,13 +87,20 @@ export default function Home() {
         }
       }
     }
-  `);
-  const { title, description } = data.site.siteMetadata;
-  const articles = data.allStrapiArticle.edges;
+  `)
+  const { title, description } = data.site.siteMetadata
+  const articles = data.allStrapiArticle.edges
 
   return (
     <Layout>
-      <Seo title={title} description={description} />
+      <Seo
+        title={title}
+        description={description}
+        other={{
+          name: "google-site-verification",
+          content: "z_dA9qmqPOWj0YULy1jFOA0pV2icqoybYn7DbbE1NbM",
+        }}
+      />
       <HeaderHome title={title} />
       <section className="section-cards">
         {cardContent.map((el, index) => {
@@ -96,11 +111,11 @@ export default function Home() {
               image={el.image}
               key={index}
             />
-          );
+          )
         })}
       </section>
       <h2 className="last-posts">LAST POSTS</h2>
       <PostGrid articles={articles} />
     </Layout>
-  );
+  )
 }
