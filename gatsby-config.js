@@ -11,6 +11,8 @@ require("dotenv").config({
   path: `.env`,
 })
 
+const siteUrl = process.env.DOMINIO
+
 const strapiConfig = {
   apiURL: process.env.STRAPI_API_URL,
   accessToken: process.env.STRAPI_TOKEN,
@@ -37,9 +39,9 @@ const strapiConfig = {
 }
 
 module.exports = {
-  pathPrefix: "/healthyrel-blog",
+  //pathPrefix: "/healthyrel-blog",
   siteMetadata: {
-    siteUrl: `https://github.com/jovivaspo/healthyrel-blog`,
+    siteUrl: `${siteUrl}`,
     title: `HealthyRel`,
     description: `Explore HealthyRel for tips, advice, and experiences on mental health, social relationships, and love. Learn to improve your emotional well-being and build strong and healthy relationships on our website.`,
   },
@@ -50,6 +52,33 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: strapiConfig,
+    },
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        query: `
+        {
+          allSitePage {
+            edges{
+                 node{
+                      path
+                       }
+                  }
+           }
+          }
+      `,
+        resolveSiteUrl: () => siteUrl,
+        resolvePages: ({ allSitePage: { edges: allPages } }) => {
+          return allPages.map(page => {
+            return { path: page.node.path }
+          })
+        },
+        serialize: ({ path }) => {
+          return {
+            url: "/healthyrel-blog" + path,
+          }
+        },
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
