@@ -77,7 +77,7 @@ module.exports = {
         },
         serialize: ({ path }) => {
           return {
-            url: "/healthyrel-blog" + path,
+            url: path,
           }
         },
       },
