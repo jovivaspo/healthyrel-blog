@@ -39,7 +39,7 @@ const strapiConfig = {
 }
 
 module.exports = {
-  //pathPrefix: "/healthyrel-blog",
+  pathPrefix: "/healthyrel-blog",
   siteMetadata: {
     siteUrl: `${siteUrl}`,
     title: `HealthyRel`,
@@ -75,7 +75,7 @@ module.exports = {
         },
         serialize: ({ path }) => {
           return {
-            url: "/healthyrel-blog" + path,
+            url: path,
           }
         },
       },
