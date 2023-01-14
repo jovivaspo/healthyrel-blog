@@ -56,7 +56,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-sitemap",
       options: {
-        createLinkInHead: false,
+        createLinkInHead: true,
         excludes: ["/about", "/contact", "legal-notice", "privacy-policy"],
         query: `
         {
