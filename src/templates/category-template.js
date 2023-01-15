@@ -1,15 +1,16 @@
 /*MODULES*/
-import React from "react";
-import { graphql } from "gatsby";
+import React from "react"
+import { graphql } from "gatsby"
 /*COMPONENTS*/
-import Layout from "../components/layout";
-import PostGrid from "../components/posts-grid";
+import Layout from "../components/layout"
+import PostGrid from "../components/posts-grid"
 
 const categoryTemplate = ({ data }) => {
+  console.log(data)
   const category =
     data.strapiCategory.articles.length > 0
       ? data.strapiCategory.articles[0].category
-      : null;
+      : null
   return (
     <Layout>
       <h2 className="last-posts">LAST POSTS</h2>
@@ -19,10 +20,10 @@ const categoryTemplate = ({ data }) => {
         <h3>There isn't any article in this category</h3>
       )}
     </Layout>
-  );
-};
+  )
+}
 
-export default categoryTemplate;
+export default categoryTemplate
 
 export const query = graphql`
   query getArticles($name: String) {
@@ -45,4 +46,4 @@ export const query = graphql`
       }
     }
   }
-`;
+`

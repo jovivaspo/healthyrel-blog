@@ -1,22 +1,35 @@
-import React from "react";
-import { useEffect } from "react";
+import React from "react"
+import { useEffect } from "react"
 
-const usePosition = (ref) => {
-  const [position, setPostion] = React.useState({});
+const usePosition = ref => {
+  const [position, setPostion] = React.useState({})
+  const [height, setHeight] = React.useState(70)
 
   useEffect(() => {
     const handlerPosition = () => {
       setPostion({
         x: ref.current.getBoundingClientRect().x,
         width: ref.current.getBoundingClientRect().width,
-      });
-    };
-    handlerPosition();
-    window.addEventListener("resize", handlerPosition);
-    return () => window.removeEventListener("resize", handlerPosition);
-  }, [ref.current]);
+      })
+    }
 
-  return position;
-};
+    const handlerHight = () => {
+      const heightPrev = height
+      setHeight(window.scrollY + heightPrev)
+    }
 
-export { usePosition };
+    handlerPosition()
+
+    window.addEventListener("resize", handlerPosition)
+    document.addEventListener("scroll", handlerHight)
+
+    return () => {
+      document.removeEventListener("scroll", handlerHight)
+      window.removeEventListener("resize", handlerPosition)
+    }
+  }, [ref.current])
+
+  return { position, height }
+}
+
+export { usePosition }

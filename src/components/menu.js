@@ -18,7 +18,7 @@ const Menu = React.forwardRef((props, ref) => {
   const { handlerActiveSubMenu, isActiveSubMenu } = useSubMenu()
   const arrowRef = React.useRef()
 
-  const position = usePosition(arrowRef)
+  const { position, height } = usePosition(arrowRef)
 
   React.useEffect(() => {
     isActive
@@ -85,6 +85,7 @@ const Menu = React.forwardRef((props, ref) => {
       <Submenu
         categories={categories}
         position={position}
+        height={height}
         isActiveSubMenu={isActiveSubMenu}
         handlerActiveSubMenu={handlerActiveSubMenu}
       />

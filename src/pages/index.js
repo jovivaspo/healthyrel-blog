@@ -48,14 +48,6 @@ const cardContent = [
   },
 ]
 
-const Head = () => (
-  <>
-    <meta
-      name="google-site-verification"
-      content="z_dA9qmqPOWj0YULy1jFOA0pV2icqoybYn7DbbE1NbM"
-    />
-  </>
-)
 export default function Home() {
   const data = useStaticQuery(graphql`
     query homeMetadata {

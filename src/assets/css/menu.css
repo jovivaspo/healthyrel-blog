@@ -65,7 +65,6 @@ li {
 
 .submenu {
   position: fixed;
-  top: 70px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 16px 24px;

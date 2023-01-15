@@ -1,50 +1,51 @@
 /*MODULES*/
-import React from "react";
-import { useSubMenu } from "../hooks/useSubMenu";
+import React from "react"
+import { useSubMenu } from "../hooks/useSubMenu"
 /*COMPONENTS*/
-import { Link } from "gatsby";
+import { Link } from "gatsby"
 
 /*CSS*/
-import "../assets/css/menu.css";
+import "../assets/css/menu.css"
 
 const Submenu = ({
   categories,
   position,
+  height,
   isActiveSubMenu,
   handlerActiveSubMenu,
 }) => {
-  const subMenuRef = React.useRef();
+  const subMenuRef = React.useRef()
 
   React.useEffect(() => {
     isActiveSubMenu
       ? subMenuRef.current.classList.add("submenu-active")
-      : subMenuRef.current.classList.remove("submenu-active");
-  }, [isActiveSubMenu, subMenuRef.current]);
+      : subMenuRef.current.classList.remove("submenu-active")
+  }, [isActiveSubMenu, subMenuRef.current])
 
   React.useEffect(() => {
-    const handlerSubMenu = (e) => {
+    const handlerSubMenu = e => {
       if (
         isActiveSubMenu &&
         !subMenuRef.current.contains(e.target) &&
         !e.target.matches(".arrow") &&
         !e.target.matches(".arrow > *")
       ) {
-        handlerActiveSubMenu();
+        handlerActiveSubMenu()
       }
-    };
+    }
 
-    document.addEventListener("mousedown", handlerSubMenu);
+    document.addEventListener("mousedown", handlerSubMenu)
 
     return () => {
-      document.removeEventListener("mousedown", handlerSubMenu);
-    };
-  }, [isActiveSubMenu, subMenuRef.current]);
+      document.removeEventListener("mousedown", handlerSubMenu)
+    }
+  }, [isActiveSubMenu, subMenuRef.current])
 
   return (
     <div
       className="submenu"
       ref={subMenuRef}
-      style={{ left: position.x - position.width }}
+      style={{ left: position.x - position.width, top: height }}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -72,10 +73,10 @@ const Submenu = ({
           <Link key={index} to={`/${el}`}>
             {el}
           </Link>
-        );
+        )
       })}
     </div>
-  );
-};
+  )
+}
 
-export default Submenu;
+export default Submenu
