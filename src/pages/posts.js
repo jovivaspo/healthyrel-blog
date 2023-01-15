@@ -6,7 +6,7 @@ import SlidePost from "../components/slide-posts"
 const Posts = () => {
   const results = useStaticQuery(query)
   const posts = results.allStrapiCategory.nodes
-  console.log(posts)
+
   return (
     <Layout>
       <article className="full-content">

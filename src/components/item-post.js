@@ -1,18 +1,17 @@
 /*MODULES*/
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import { Link } from "gatsby";
-import React from "react";
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { Link } from "gatsby"
+import React from "react"
 
 const ItemPost = ({ post }) => {
-  const imageToRender = getImage(
-    post.thumbnail.localFile.childImageSharp.gatsbyImageData
-  );
   return (
     <div className="item-post">
       <Link to={`/${post.slug}`}>
         <GatsbyImage
           class="image-item-post"
-          image={imageToRender}
+          image={getImage(
+            post.thumbnail.localFile.childImageSharp.gatsbyImageData
+          )}
           alt={post.thumbnail.alternativeText}
         />
         <div className="container-text">
@@ -20,7 +19,7 @@ const ItemPost = ({ post }) => {
         </div>
       </Link>
     </div>
-  );
-};
+  )
+}
 
-export default ItemPost;
+export default ItemPost
