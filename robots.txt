@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://jovivaspo.github.io/healthyrel-blog/sitemap-index.xml
-Host: https://jovivaspo.github.io
+Sitemap: https://healthyrel.online/sitemap-index.xml
+Host: https://healthyrel.online
