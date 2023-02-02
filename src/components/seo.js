@@ -28,7 +28,7 @@ const Seo = ({ title, description, other }) => {
           {
             rel: "sitemap",
             type: "application/xml",
-            href: "/healthyrel-blog/sitemap-index.xml",
+            href: "/sitemap-index.xml",
           },
         ]}
       />
