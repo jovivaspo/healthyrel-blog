@@ -83,8 +83,6 @@ export default function Home() {
   const { title, description } = data.site.siteMetadata
   const articles = data.allStrapiArticle.edges
 
-  console.log(articles)
-
   return (
     <Layout>
       <Seo
